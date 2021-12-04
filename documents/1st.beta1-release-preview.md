@@ -4,7 +4,7 @@ highlighter: shiki
 lineNumbers: true
 ---
 
-<!-- markdownlint-disable MD025 MD003 MD033 -->
+<!-- markdownlint-disable MD003 MD033 MD022 -->
 
 # NoneBot2 开发研讨会
 
@@ -20,13 +20,13 @@ lineNumbers: true
   - 🎉 依赖注入
   - 🔧 OneBot Adapter 内置工具函数
   - 🕹️ 拓展格式化控制符
+  - 🚚 项目文件结构更改
 
 - 📝 全新文档框架: `nonepress`
 
 - 💬 讨论议题
   - 📛 `nonebot.adatper.cqhttp`改名
   - 🕸️ Adapter连接层抽象
-  - 🚚 代码仓库拆分
 
 - ❓自由提问环节
 
@@ -257,4 +257,55 @@ template.format(data)
 
 基于docusaurus的一个新的文档页面 [nonebot/docusaurus-theme-nonepress](https://github.com/nonebot/docusaurus-theme-nonepress)
 
-![](1st/new-doc-1.png)
+<table>
+  <tr>
+    <td><img src="/1st/new-doc-1.png"></td>
+    <td><img src="/1st/new-doc-2.png"></td>
+  </tr>
+  <tr>
+    <td><img src="/1st/new-doc-3.png"></td>
+  </tr>
+</table>
+
+---
+
+# `nonebot.adapter.cqhttp`改名
+
+由于`OneBot v12`标准的推出, 讨论是否修改当前Adapter名称
+
+目前, 有以下几个可选方案
+
+- 重命名`nonebot.adapter.cqhttp`为`nonebot.adapter.onebot`
+  - 其中`.v11`处理v11协议(即目前协议), `.v12`处理v12新协议
+  - 好处: 命名清晰明确
+  - 坏处: 要改现有代码, 是大型破坏性修改
+  
+- 保留`nonebot.adapter.cqhttp`来处理v11协议, 新建`nonebot.adapter.cqhttp`处理v12协议
+  - 好处: 兼容性强
+  - 坏处: `cqhttp`命名容易混淆, 而且无法推动用户使用新协议
+  
+- 或者还有其他方案? Orz
+
+---
+
+# Adapter连接层抽象
+
+独立出Adapter的连接层来单独处理事件
+
+目前, NoneBot2的网络连接层是和Bot耦合的, 基本类似于一个连接对应一个Bot, 这会造成跨平台兼容性不足
+
+而注册的Adapter实际上为Bot对象, 这也会造成概念上的混淆
+
+现在正在考虑抽象出Adapter的网络连接为单独一层, 解除部分Bot对象的耦合功能
+
+可能对第三方Adapter开发者负担较大
+
+---
+layout: center
+---
+
+# 自由提问
+
+问, 都可以问 ~~能答上算我输~~
+
+![今回はここまで](/1st/the-end.png)
