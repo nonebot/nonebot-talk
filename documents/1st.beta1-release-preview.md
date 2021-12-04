@@ -253,6 +253,23 @@ template.format(data)
 
 ---
 
+# 文件结构更改
+
+你看见我的Adapter了吗
+
+- 目前, 当前的~~半个~~monorepo结构遇到了一些问题:
+  - 各个Adapter必须统一发版, 无法自行更新
+  - 文档生成比较麻烦
+
+- NoneBot2决定将[主仓库](https://github.com/nonebot/nonebot2)拆分
+  - `./packages/nonebot-adapter-cqhttp` ➡️ [nonebot/adapter-onebot](https://github.com/nonebot/adapter-onebot)
+  - `./packages/nonebot-adapter-feishu` ➡️ [nonebot/adapter-feishu](https://github.com/nonebot/adapter-feishu)
+  - [nonebot/adapter-telegram](https://github.com/nonebot/adapter-telegram)
+
+这些拆分的仓库将会关闭Issue, 如果存在问题, 请在主仓库进行反馈
+
+---
+
 # 全新文档NonePress
 
 基于docusaurus的一个新的文档页面 [nonebot/docusaurus-theme-nonepress](https://github.com/nonebot/docusaurus-theme-nonepress)
