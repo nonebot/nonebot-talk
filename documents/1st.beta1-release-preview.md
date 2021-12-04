@@ -34,7 +34,7 @@ lineNumbers: true
 
 # 依赖注入
 
-打下去这一针, 你就变成美少女了 [#588](https://github.com/nonebot/nonebot2/pull/588)
+TODO: 添加一个整活的副标题 [#588](https://github.com/nonebot/nonebot2/pull/588)
 
 ## 什么是依赖注入?
 
@@ -280,7 +280,7 @@ template.format(data)
   - 好处: 命名清晰明确
   - 坏处: 要改现有代码, 是大型破坏性修改
   
-- 保留`nonebot.adapter.cqhttp`来处理v11协议, 新建`nonebot.adapter.cqhttp`处理v12协议
+- 保留`nonebot.adapter.cqhttp`来处理v11协议, 新建`nonebot.adapter.onebot`处理v12协议
   - 好处: 兼容性强
   - 坏处: `cqhttp`命名容易混淆, 而且无法推动用户使用新协议
   
