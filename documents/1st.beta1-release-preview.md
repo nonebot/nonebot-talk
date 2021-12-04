@@ -326,3 +326,16 @@ layout: center
 问, 都可以问 ~~能答上算我输~~
 
 ![今回はここまで](/1st/the-end.png)
+
+---
+
+# 会议纪要
+
+## 问题
+
+1. `Adapter` 与 `Bot` 的分离，协议处理连接，bot处理事件广播与api调用
+2. `on_command` 是否应该去除命令前缀以及新的（DI）实现方式
+3. `on_command` / `Rule` 该如何提供一个接口来获取到规则内部（checker）的信息
+4. `StateParam` 的检查存疑，是否应该为 `state` 创建一个类型
+5. `StateFactory` 是否还有必要？（可以移除）
+6. 如何实现自定义事件的广播：`handle_event(bot, event)`
